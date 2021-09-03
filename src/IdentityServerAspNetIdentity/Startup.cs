@@ -5,6 +5,7 @@
 using IdentityServerAspNetIdentity.Data;
 using IdentityServerAspNetIdentity.Models;
 using IdentityServerAspNetIdentity.SharedCore.Cors;
+using IdentityServerAspNetIdentity.SharedCore.Nginx;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -31,6 +32,8 @@ namespace IdentityServerAspNetIdentity
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddNginx();
+
             services.AddControllersWithViews();
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
@@ -83,13 +86,12 @@ namespace IdentityServerAspNetIdentity
 
             // local api
             services.AddLocalApiAuthentication();
-
         }
 
         public void Configure(IApplicationBuilder app)
         {
             // nginx
-            app.UseForwardedHeaders();
+            app.UseNginx();
 
             if (Environment.IsDevelopment())
             {
