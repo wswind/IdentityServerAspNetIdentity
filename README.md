@@ -5,16 +5,6 @@ A sample project combines:
 3. identityserver with local webapi  https://identityserver4.readthedocs.io/en/latest/topics/add_apis.html
 4.  scoped authorize policy https://github.com/IdentityServer/IdentityServer4.AccessTokenValidation  https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies
 
-create project with template:
-
-```
-dotnet new -i IdentityServer4.Templates
-
-dotnet new is4aspid -n IdentityServerAspNetIdentity
-dotnet add package IdentityServer4.EntityFramework
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-```
-
 gen cert:
 
 ```
@@ -29,6 +19,15 @@ cert path and pwd is configured at:
     "PfxPath": "cert.pfx",
     "Password": "xxx"
 }
+```
+
+this demo is created by is4aspid template:
+
+```
+dotnet new -i IdentityServer4.Templates
+dotnet new is4aspid -n IdentityServerAspNetIdentity
+dotnet add package IdentityServer4.EntityFramework
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
 
 efcore migration:
@@ -50,5 +49,6 @@ dotnet ef database update --context ConfigurationDbContext
 dotnet run /seed
 ```
 
-postman :  import  `doc/postman_collection.json`
+postman:  
+import  `doc/postman_collection.json`
 
