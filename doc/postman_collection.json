@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "d6e8f231-caf3-4f27-869c-8dda94413e5c",
+		"name": "IdentityServerAspnetIdentity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "client 1 token",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "alice",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Pass123$",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client1",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xxx",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "offline_access openid profile IdentityServerApi scope1",
+							"type": "text",
+							"disabled": true
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client 2 token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client2",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xxx",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client 3 token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client3",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xxx",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ids client token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "IdsClient",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xxx",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client1",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xxx",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "1284A1F70963685FB84A6C2835086C58D4FD49518941F5CAAA569F0974AAD0D8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localapi",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkI1MUFBRkNERDJCRkRDNkU3QUY2MzQ5M0Y0NTU0ODNCOUVDN0Y4QkRSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRScXZ6ZEtfM0c1NjlqU1Q5RlZJTzU3SC1MMCJ9.eyJuYmYiOjE2MzA1NzQ5NjksImV4cCI6MTYzMDc0Nzc2OSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjUwMDEvcmVzb3VyY2VzIiwiY2xpZW50X2lkIjoiSWRzQ2xpZW50IiwianRpIjoiMTg4RUMzQjM3QzMyMEM4MjQxNEQxMjk5OTQ2NzVENEYiLCJpYXQiOjE2MzA1NzQ5NjksInNjb3BlIjpbIklkZW50aXR5U2VydmVyQXBpIl19.W9liKf5tH6Ck02dKX-B-t8-nU0HnK1JkJfWHDCFXMEC397HT2j3iSRppxH11y_89vKkuTHmJR7JYXk1CuNOydqU9IHR9NnmoNThHlTPC-enOduraH_HNOhTqf3wohi_-f1zoSHRVrYalPehGeh8ZHRaSXSWbkoJIH2HnK5T_wfwo9G_XudM_kbgHe6H4jcFRkLtSpYu0rHp3NRibvybJkOkuIM2e1MeRhlfTTQc9Z7BidYnAZCiEhcGvpOS1rgLdgHwmIuji743pIPeBwSbRGMxsrXhPlikHYkk53iT5U20gNJQgIszrA21srS0Z_tD9Jo4HPmXftJfoNgfJGxxG9A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/LocalApi/test",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"LocalApi",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Request 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkI1MUFBRkNERDJCRkRDNkU3QUY2MzQ5M0Y0NTU0ODNCOUVDN0Y4QkRSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRScXZ6ZEtfM0c1NjlqU1Q5RlZJTzU3SC1MMCJ9.eyJuYmYiOjE2MzA1OTE5MzYsImV4cCI6MTYzMDc2NDczNiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6WyJBcGlSZXNvdXJjZTMiLCJBcGlSZXNvdXJjZTIiLCJodHRwczovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJjbGllbnQyIiwianRpIjoiNEI4Q0ZFRUM1NEVCMzM1N0ZCQjFGNDRERTE0QjEzNTgiLCJpYXQiOjE2MzA1OTE5MzYsInNjb3BlIjpbIlNjb3BlMiJdfQ.WvytnyJmHtsuhYaFmgm5zCwmELWNW3Z5EDEg2FmJZezLghlmVsqkxFSfxo2VzkRSTFCFVBQ3Gu8kyG-bjtdMFg2WsHHp99u98OHfHOZFTYI0HHq6bxM0K4-nCxo3zoT_4lPF-P71-5tmnsuXnH9Ngdsi-dFYSS-mKLjQTJl6p5hVdUXgXUbytel4rr83xY7nCuDoQYXQ0Jnlc__WYg21mqBQyDMSNF1Dp3VTIOsMs8JR5vcOci-5rEWb0Zwk1rDpQ4e4GcPYDcUtVNI_gPhQKynamLap9NhABI3EdTj6ZSWGMt2aTPvSymOZ773d1cuVErm46_XYWQuaJ8jZ5zvHnQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/weatherforecast/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"weatherforecast",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Api Request 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkI1MUFBRkNERDJCRkRDNkU3QUY2MzQ5M0Y0NTU0ODNCOUVDN0Y4QkRSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InRScXZ6ZEtfM0c1NjlqU1Q5RlZJTzU3SC1MMCJ9.eyJuYmYiOjE2MzA1OTIwOTYsImV4cCI6MTYzMDc2NDg5NiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6WyJBcGlSZXNvdXJjZTMiLCJBcGlSZXNvdXJjZTIiLCJodHRwczovL2xvY2FsaG9zdDo1MDAxL3Jlc291cmNlcyJdLCJjbGllbnRfaWQiOiJjbGllbnQyIiwianRpIjoiNDZFNzlFOTA3QkY3NzJDMDFGM0ZCMzQ1NTg2QTE4NTgiLCJpYXQiOjE2MzA1OTIwOTYsInNjb3BlIjpbIlNjb3BlMiJdfQ.aMA1QN85Wbrm5ENAJgYaDEjqGRsA1tcmL2sTUFk8emOYJc7pVe9M64XA9BM4uGD2ZnIjaU1v5BLRln4jauq8gtxyy1mqxEP_AetNCqO40wLo6jglU96vssnq_QwoyXQGKV0zESU-c6GdG_alry6nGg0zQud3qz4IOfsur81poKKuhHdcDPkdfIODW2pv2K4iKnoGXmr6Czvt0JTFq1_axInB_KQV6HF1jfGip0uPsN2E9PqeLziu4aA1B_f6ozUQwwIdHeQk7uoNs6cLCRyCsiB7is8DhxJq0oRzuNxm3-5r2MvfNMvYN1w3uD4GSBHb0w_3h092MZXDGct6GSIU_A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/weatherforecast/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"weatherforecast",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
