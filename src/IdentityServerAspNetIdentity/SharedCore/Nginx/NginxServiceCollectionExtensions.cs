@@ -36,8 +36,8 @@ namespace IdentityServerAspNetIdentity.SharedCore.Nginx
                     {
                         string prefix = prefixVals.Last();
                         ctx.Request.PathBase = $"/{prefix}";
-                        string host = ctx.Request.Host.Value;
-                        ctx.Request.Host = new HostString($"{host}/{prefix}");
+                        //string host = ctx.Request.Host.Value;
+                        //ctx.Request.Host = new HostString($"{host}/{prefix}");
                     }
                 }
 
