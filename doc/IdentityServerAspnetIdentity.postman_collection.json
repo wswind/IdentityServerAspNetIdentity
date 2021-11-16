@@ -38,7 +38,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "xxx",
+							"value": "client1secret",
 							"type": "text"
 						},
 						{
@@ -89,7 +89,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "xxx",
+							"value": "client2secret",
 							"type": "text"
 						}
 					]
@@ -129,7 +129,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "xxx",
+							"value": "client3secret",
 							"type": "text"
 						}
 					]
@@ -169,7 +169,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "xxx",
+							"value": "idsclientsecret",
 							"type": "text"
 						}
 					]
@@ -209,7 +209,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "xxx",
+							"value": "client1secret",
 							"type": "text"
 						},
 						{

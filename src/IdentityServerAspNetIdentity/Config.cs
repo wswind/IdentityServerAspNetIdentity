@@ -60,7 +60,7 @@ namespace IdentityServerAspNetIdentity
                     ClientId = "client1",
                     ClientName = "ResourceOwner Password Client",
                     AllowedGrantTypes = { GrantTypes.ResourceOwnerPassword.First() },
-                    ClientSecrets = { new Secret("xxx".Sha256()) },
+                    ClientSecrets = { new Secret("client1secret".Sha256()) },
                     AllowedScopes = {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
@@ -75,7 +75,7 @@ namespace IdentityServerAspNetIdentity
                     ClientId = "client2",
                     ClientName = "ClientCredential  Client",
                     AllowedGrantTypes = { GrantTypes.ClientCredentials.First() },
-                    ClientSecrets = { new Secret("xxx".Sha256()) },
+                    ClientSecrets = { new Secret("client2secret".Sha256()) },
                     AllowedScopes = {
                         "Scope2"
                     },
@@ -86,7 +86,7 @@ namespace IdentityServerAspNetIdentity
                     ClientId = "client3",
                     ClientName = "ClientCredential  Client",
                     AllowedGrantTypes = { GrantTypes.ClientCredentials.First() },
-                    ClientSecrets = { new Secret("xxx".Sha256()) },
+                    ClientSecrets = { new Secret("client3secret".Sha256()) },
                     AllowedScopes = {
                         "Scope1", "Scope2"
                     },
@@ -97,7 +97,7 @@ namespace IdentityServerAspNetIdentity
                     ClientId = "IdsClient",
                     ClientName = "Ids Local Api Client",
                     AllowedGrantTypes = { GrantTypes.ClientCredentials.First() },
-                    ClientSecrets = { new Secret("xxx".Sha256()) },
+                    ClientSecrets = { new Secret("idsclientsecret".Sha256()) },
                     AllowedScopes = {
                         IdentityServerConstants.LocalApi.ScopeName
                     },
