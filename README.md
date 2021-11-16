@@ -5,6 +5,20 @@ A sample project combines:
 3. identityserver with local webapi  https://identityserver4.readthedocs.io/en/latest/topics/add_apis.html
 4.  scoped authorize policy https://github.com/IdentityServer/IdentityServer4.AccessTokenValidation  https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies
 
+
+## how to use
+
+```
+cd src\IdentityServerAspNetIdentity
+dotnet run /seed
+``
+
+use postman import  `doc/postman_collection.json` 
+
+
+
+## how to recreate this project
+
 gen cert:
 
 ```
@@ -40,10 +54,6 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet ef migrations add InitialIdentityServerApplicationDbContext -c ApplicationDbContext -o Data/Migrations/IdentityServer/ApplicationDb
 dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
 dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
-
-dotnet run /seed
 ```
 
-postman:  
-import  `doc/postman_collection.json`
 
