@@ -34,7 +34,8 @@ namespace IdentityServerAspNetIdentity
                     UserClaims =
                     {
                         JwtClaimTypes.Name,
-                        JwtClaimTypes.Role
+                        JwtClaimTypes.Role,
+                        "job" // add custom claim
                     },
                 },
                 new ApiResource("ApiResource2"){

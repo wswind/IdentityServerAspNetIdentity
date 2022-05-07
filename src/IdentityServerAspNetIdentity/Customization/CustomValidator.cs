@@ -27,7 +27,9 @@ namespace IdentityServerAspNetIdentity.Customization
             {
                 var claims = new List<Claim>() {
                         new Claim(JwtClaimTypes.Subject, userName),
-                        new Claim(JwtClaimTypes.Name, userName)
+                        new Claim(JwtClaimTypes.Name, userName),
+                        // add custom claim
+                        new Claim("job", "worker")
                 };
                 context.Result = new GrantValidationResult(subject: userName, GrantType, claims);
             }
