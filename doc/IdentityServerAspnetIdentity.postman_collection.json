@@ -150,6 +150,64 @@
 			"response": []
 		},
 		{
+			"name": "client 4 token validate",
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "custom_pwd",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client4",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "client4secret",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "ids client token",
 			"request": {
 				"method": "POST",
