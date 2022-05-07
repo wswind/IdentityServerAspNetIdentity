@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Primitives;
 using System.Linq;
 
-namespace IdentityServerAspNetIdentity.SharedCore.Nginx
+namespace IdentityServerAspNetIdentity.Core.Nginx
 {
     public static class NginxServiceCollectionExtensions
     {
@@ -36,11 +35,8 @@ namespace IdentityServerAspNetIdentity.SharedCore.Nginx
                     {
                         string prefix = prefixVals.Last();
                         ctx.Request.PathBase = $"/{prefix}";
-                        //string host = ctx.Request.Host.Value;
-                        //ctx.Request.Host = new HostString($"{host}/{prefix}");
                     }
                 }
-
                 await next();
             });
             return app;

@@ -21,11 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SharedCore\Cors\" />
-    <Folder Include="SharedCore\Nginx\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="cert.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

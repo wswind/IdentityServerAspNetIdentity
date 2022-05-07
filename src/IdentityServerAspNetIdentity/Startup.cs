@@ -2,10 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServerAspNetIdentity.Core.Cors;
+using IdentityServerAspNetIdentity.Core.Nginx;
+using IdentityServerAspNetIdentity.Customization;
 using IdentityServerAspNetIdentity.Data;
 using IdentityServerAspNetIdentity.Models;
-using IdentityServerAspNetIdentity.SharedCore.Cors;
-using IdentityServerAspNetIdentity.SharedCore.Nginx;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -74,16 +75,16 @@ namespace IdentityServerAspNetIdentity
             {
                 options.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(assemblyName));
             })
-            //cors https://identityserver4.readthedocs.io/en/latest/topics/cors.html
-            .AddCorsPolicyService<AllowAllCorsPolicyService>();
-
-
+            // cors https://identityserver4.readthedocs.io/en/latest/topics/cors.html
+            .AddCorsPolicyService<AllowAllCorsPolicyService>()
             // cert
-            // builder.AddDeveloperSigningCredential();
-            builder.AddSigningCredential(new X509Certificate2(GetCert()));
+            .AddSigningCredential(new X509Certificate2(GetCert()));
+
+            // custom
+            builder.AddExtensionGrantValidator<CustomValidator>();
+            builder.AddProfileService<CustomProfileService>();
 
             services.AddAuthentication();
-
             // local api
             services.AddLocalApiAuthentication();
         }

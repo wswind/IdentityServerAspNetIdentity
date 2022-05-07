@@ -4,6 +4,7 @@
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
+using IdentityServerAspNetIdentity.Customization;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -102,7 +103,18 @@ namespace IdentityServerAspNetIdentity
                         IdentityServerConstants.LocalApi.ScopeName
                     },
                     AccessTokenLifetime = 3600 * 24 * 2,//2 days
-                }
+                },
+                new Client
+                {
+                    ClientId = "client4",
+                    ClientName = "custom validate client",
+                    AllowedGrantTypes = { new CustomValidator().GrantType },
+                    ClientSecrets = { new Secret("client4secret".Sha256()) },
+                    AllowedScopes = {
+                        "Scope1", "Scope2"
+                    },
+                    AccessTokenLifetime = 3600 * 24 * 2,//2 days
+                },
             };
 
         public static Action<IdentityOptions> AspNetIdentityOptions

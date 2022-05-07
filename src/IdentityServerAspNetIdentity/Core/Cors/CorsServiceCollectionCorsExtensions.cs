@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IdentityServerAspNetIdentity.SharedCore.Cors
+namespace IdentityServerAspNetIdentity.Core.Cors
 {
     public static class CorsServiceCollectionCorsExtensions
     {
