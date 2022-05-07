@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using IdentityServer4.Services;
 using IdentityServerAspNetIdentity.Core.Cors;
 using IdentityServerAspNetIdentity.Core.Nginx;
 using IdentityServerAspNetIdentity.Customization;
@@ -80,9 +81,9 @@ namespace IdentityServerAspNetIdentity
             // cert
             .AddSigningCredential(new X509Certificate2(GetCert()));
 
-            // custom
+            // custom validator
             builder.AddExtensionGrantValidator<CustomValidator>();
-            builder.AddProfileService<CustomProfileService>();
+            builder.AddProfileService<DefaultProfileService>();
 
             services.AddAuthentication();
             // local api
