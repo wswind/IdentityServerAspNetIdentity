@@ -51,11 +51,11 @@ dotnet tool install --global dotnet-ef --version 3.1.15
 dotnet tool update --global dotnet-ef --version 3.1.15
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
-dotnet ef migrations add InitialIdentityServerApplicationDbContext -c ApplicationDbContext -o Data/Migrations/IdentityServer/ApplicationDb
-dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/IdentityServer/PersistedGrantDb
-dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/IdentityServer/ConfigurationDb
+dotnet ef migrations add InitialIdentityServerApplicationDbContext -c IdentityDbContext -o Data/Migrations/IdentityDb
+dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/PersistedGrantDb
+dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/ConfigurationDb
 
-dotnet ef database update --context ApplicationDbContext
+dotnet ef database update --context IdentityDbContext
 dotnet ef database update --context PersistedGrantDbContext
 dotnet ef database update --context ConfigurationDbContext
 ```

@@ -25,7 +25,7 @@ namespace IdentityServerAspNetIdentity
         {
             var services = new ServiceCollection();
             services.AddLogging();
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<IdentityDbContext>(options =>
                options.UseSqlServer(connectionString));
 
             var assemblyName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
@@ -37,7 +37,7 @@ namespace IdentityServerAspNetIdentity
                 options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(assemblyName)));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             var storeOptionsCfg = new ConfigurationStoreOptions();
@@ -50,7 +50,7 @@ namespace IdentityServerAspNetIdentity
             {
                 using (var scope = serviceProvider.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+                    var context = scope.ServiceProvider.GetService<IdentityDbContext>();
                     var configContext = scope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
                     var grantContext = scope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>();
 

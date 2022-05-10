@@ -39,11 +39,11 @@ namespace IdentityServerAspNetIdentity
             services.AddControllersWithViews();
 
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<IdentityDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             services.AddIdentity<ApplicationUser, IdentityRole>(Config.AspNetIdentityOptions)
-                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             //cors https://identityserver4.readthedocs.io/en/latest/topics/cors.html

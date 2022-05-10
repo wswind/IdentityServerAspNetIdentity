@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IdentityServerAspNetIdentity.Data.Migrations.IdentityServer.ApplicationDb
+namespace IdentityServerAspNetIdentity.Data.Migrations.IdentityDb
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210901092812_InitialIdentityServerApplicationDbContext")]
+    [DbContext(typeof(IdentityDbContext))]
+    [Migration("20220510014246_InitialIdentityServerApplicationDbContext")]
     partial class InitialIdentityServerApplicationDbContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
