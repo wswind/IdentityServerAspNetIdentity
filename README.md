@@ -47,11 +47,11 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 efcore migration:
 
 ```
-dotnet tool install --global dotnet-ef --version 3.1.15
-dotnet tool update --global dotnet-ef --version 3.1.15
+dotnet tool install --global dotnet-ef --version 3.1.24
+dotnet tool update --global dotnet-ef --version 3.1.24
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
-dotnet ef migrations add InitialIdentityServerApplicationDbContext -c IdentityDbContext -o Data/Migrations/IdentityDb
+dotnet ef migrations add InitialIdentityServerIdentityDbContext -c IdentityDbContext -o Data/Migrations/IdentityDb
 dotnet ef migrations add InitialIdentityServerPersistedGrantDbMigration -c PersistedGrantDbContext -o Data/Migrations/PersistedGrantDb
 dotnet ef migrations add InitialIdentityServerConfigurationDbMigration -c ConfigurationDbContext -o Data/Migrations/ConfigurationDb
 
