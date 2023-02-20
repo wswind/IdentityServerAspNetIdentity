@@ -11,7 +11,7 @@ A sample project combines:
 ```
 cd src\IdentityServerAspNetIdentity
 dotnet run /seed
-``
+```
 
 use postman import  `doc/postman_collection.json` 
 
